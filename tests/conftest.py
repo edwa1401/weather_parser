@@ -1,9 +1,11 @@
-import pytest
-from fast_api_client.model import Weather
-from fast_api_client.config import Config
-import requests
 import io
 import json
+
+import pytest
+import requests
+
+from fast_api_client.config import Config
+from fast_api_client.model import Weather
 
 
 @pytest.fixture
@@ -12,6 +14,7 @@ def make_api_key():
         api_key='12345'
         )
     return config
+
 
 @pytest.fixture
 def convert_dict_to_bytes():
