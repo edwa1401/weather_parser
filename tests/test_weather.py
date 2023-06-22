@@ -2,9 +2,6 @@ from unittest.mock import patch
 
 import pytest
 
-from fast_api_client.__main__ import get_weather
-from fast_api_client.config import Config
-from fast_api_client.model import Weather
 from fast_api_client.weather import convert, get_weather_by_city
 
 
@@ -33,4 +30,4 @@ def test__get_weather_by_city__fail(make_request_response, make_weather, make_ap
         request_get_mock.return_value = make_request_response(humidity=100)
         assert get_weather_by_city("Moscow", config) == weather
 
-# TODO add text to request exeptions
+# TODO add test to request exeptions
